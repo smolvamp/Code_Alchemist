@@ -1,6 +1,6 @@
 # Multi-Purpose Windows Utility Tool
-## Requirements:
-### PyQt6:
+## Usage:
+### for dependencies run:
 ``` bash
-pip install PyQt6
+pip install -r requirement.txt
 ```
