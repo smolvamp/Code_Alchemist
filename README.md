@@ -1,10 +1,4 @@
 # Multi-Purpose Windows Utility Tool
-![IMG_20240902_223310(1)](https://github.com/user-attachments/assets/afa0dd06-7457-4c58-8335-0fbe30252716)
-
-
-## Window Utility Tool
-
-
 
 A user-friendly tool that eliminates the need to use complex command line commands by providing a simple, intuitive interface. This utility is designed to make command execution accessible and secure for both beginner and advanced users.
 
