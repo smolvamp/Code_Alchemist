@@ -97,5 +97,3 @@ python main.py
 Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request.
 
 
----
-
