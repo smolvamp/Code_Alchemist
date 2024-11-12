@@ -75,8 +75,8 @@ To run this project locally, ensure you have Python installed, along with the ne
 
 ### 1. Clone the repository:
 ```
-git clone https://github.com/smolvamp/pg6.git
-cd pg6
+git clone https://github.com/smolvamp/Code_Alchemist.git
+cd Code_Alchemist
 ```
 
 ### 2. Install dependencies:
