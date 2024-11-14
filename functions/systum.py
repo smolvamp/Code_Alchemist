@@ -9,7 +9,7 @@ def is_admin():
 
 def run_as_admin(command):
     if is_admin():
-        with open("powercfg.txt","w") as file2:
+        with open("systeminfo.txt","w") as file2:
             subprocess.run(command, check=True,text=True,stdout=file2)
             file2.close()
     else:
