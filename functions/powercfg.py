@@ -17,6 +17,6 @@ def run_as_admin(command):
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, f'"{sys.argv[0]}" {params}', None, 1)
         sys.exit()
 
-command_to_run = 'systeminfo'
+command_to_run = 'powercfg/batteryreport'
 
 run_as_admin(command_to_run)
