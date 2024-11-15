@@ -15,13 +15,26 @@ img = None
 frame_count = 0
 start_time = 0
 last_saved_time = 0
-output_folder = r'C:\Users\produ\Desktop\CIJ\python_only\OCVVP\frames'
+output_folder = r'C:\Users\produ\Desktop\Face_Recog\SampleCapture'
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
 
 capture = cv.VideoCapture(0)
-haar_cascade = cv.CascadeClassifier("C:\\Users\\produ\\Desktop\\CIJ\\Code_py\\haar_face.xml")
+haar_cascade = cv.CascadeClassifier("C:\\Users\\produ\\Desktop\\Face_Recog\\FRmodules\\haar_face.xml")
+
+"""def preprocess_image(image):
+    # Convert to grayscale 
+    gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY) 
+    # Apply Gaussian blur to reduce noise 
+    gray = cv.GaussianBlur(gray, (5, 5), 0) 
+    # Apply histogram equalization to improve contrast 
+    gray = cv.equalizeHist(gray) 
+    # Apply sharpening filter 
+    kernel = np.array([[0, -1, 0], [-1, 5,-1], [0, -1, 0]]) 
+    gray = cv.filter2D(gray, -1, kernel)''' 
+    return gray
+"""
 
 def retry_capture():
     global img, frame_count, start_time, last_saved_time
@@ -46,11 +59,12 @@ def capture_video():
     if not ret:
         return
 
-    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=10)
+    #gray = preprocess_image(frame)
+    faces_rect = haar_cascade.detectMultiScale(frame, scaleFactor=1.1, minNeighbors=9)
 
-    if len(faces_rect) > 0 and (time.time() - last_saved_time) > 0.1:
+    if len(faces_rect) > 0 and (time.time() - last_saved_time) > 0.05:
         frame_filename = os.path.join(output_folder, f'Photoo{frame_count:03d}.jpg')
+        #grayed=cv.cvtColor(frame, cv.COLOR_BGR2RGB)
         cv.imwrite(frame_filename, frame)
         frame_count += 1
         last_saved_time = time.time()
@@ -67,10 +81,10 @@ def capture_video():
     canvas.create_image(0, 0, anchor=tk.NW, image=img)
 
     
-    if (time.time() - start_time) < 20 and frame_count < 60:
+    if (time.time() - start_time) < 10 and frame_count < 10:
         root.after(10, capture_video)
     else:
-        if frame_count < 60:
+        if frame_count < 10:
             show_failure_message()
         else:
             end_capture()
