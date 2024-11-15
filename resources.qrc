@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>resources.qrc</file>
+    <file>edit.png</file>
+    <file>@alchemist..png</file>
+    <file>alchemist.png</file>
+    <file>images/play-button.png</file>
+    <file>customize.png</file>
+    <file>images/1931672ec794e48d7519b20402c8c7d4.png@128h.webp</file>
+    <file>images/info.png</file>
+    <file>images/linux(1).png</file>
+    <file>images/linux.png</file>
+    <file>images/log-out.png</file>
+    <file>images/menu-bar.png</file>
+    <file>images/search.png</file>
+    <file>images/settings.png</file>
+    <file>images/settings3.png</file>
+    <file>images/tools(1).png</file>
+    <file>images/tools.png</file>
+    <file>images/tools3.png</file>
+    <file>images/user.png</file>
+  </qresource>
+</RCC>
